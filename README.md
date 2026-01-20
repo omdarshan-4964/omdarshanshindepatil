@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Omdarshan Shinde Patil — Portfolio
 
-## Getting Started
+A modern, minimal portfolio built with Next.js 16, React 19, TypeScript, and Tailwind CSS v4.
 
-First, run the development server:
+Version: `0.1.1`
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
+## What the project does
+
+This is a personal portfolio website showcasing projects, skills, certifications, and education. It demonstrates modern web development with Next.js 16, React 19, TypeScript, and Tailwind CSS v4.
+
+### Why this is useful
+
+- Modern portfolio template with production-ready features
+- Collection of reusable UI components (see `components/`)
+- Up-to-date with Next.js 16 and React 19 patterns (app router, server components)
+- Tailwind CSS v4 with custom animations and glass morphism effects
+
+#### Key features
+
+- Next.js 16 App Router with server components
+- Responsive design with Tailwind CSS v4
+- Dark mode support with next-themes
+- Animated UI components and transitions
+- SEO optimized with metadata and structured data
+
+##### Getting started
+
+Prerequisites
+
+- Node.js 18 or newer
+- pnpm (recommended) — install from <https://pnpm.io/>
+
+Quick start
+
+\`\`\`bash
+# install dependencies
+pnpm install
+
+# run development server
 pnpm dev
-# or
-bun dev
-```
+\`\`\`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Available scripts
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `pnpm dev` — runs `next dev` (development server)
+- `pnpm build` — runs `next build` (production build)
+- `pnpm start` — runs `next start` (serve built app)
+- `pnpm lint` — run `eslint .`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Building for production
 
-## Learn More
+\`\`\`bash
+pnpm build
+pnpm start
+\`\`\`
 
-To learn more about Next.js, take a look at the following resources:
+Project layout (high level)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `app/` — Next.js App Router pages and layout
+- `components/` — UI components and small feature pieces
+- `lib/` — utilities and helpers
+- `public/` — static assets
+- `styles/` — global styles and Tailwind CSS entry
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Where to get help
 
-## Deploy on Vercel
+- For questions or issues, feel free to open a GitHub issue
+- For customization help, refer to the component files in `components/`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Who maintains this project
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Maintainer: Omdarshan Shinde Patil
+
+Contributing
+
+Contributions are welcome. Open an issue to discuss larger changes, or send a pull request with a focused, well-documented change. Keep changes small and include a description and screenshots (if UI-related).
+
+Notes and next steps
+
+- Consider adding a `CONTRIBUTING.md` and CI badges for build/lint status.
+- If you want, I can add a basic `CONTRIBUTING.md` and a PR template next.
+
+---
+
+If anything in this README should be adjusted (more examples, extra badges, or internal docs links), tell me which parts you want expanded and I'll update it.

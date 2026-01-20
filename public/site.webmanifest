@@ -1,0 +1,26 @@
+{
+  "name": "Omdarshan Shinde Patil — Full Stack Developer",
+  "short_name": "OMDARSHAN",
+  "description": "Full Stack Developer specializing in Next.js, TypeScript, and AI solutions. Building production-ready applications.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0ea5e9",
+  "icons": [
+    {
+      "src": "/icon-light-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon.png",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
