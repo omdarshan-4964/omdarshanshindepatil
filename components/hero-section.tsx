@@ -81,12 +81,13 @@ export function HeroSection() {
               </a>
               <Link
                 href="/introduction"
-                className="group inline-flex items-center justify-center gap-3 rounded-lg border border-border px-7 py-4 sm:py-3.5 font-mono text-sm text-muted-foreground transition-all duration-300 hover:border-foreground hover:text-foreground hover:bg-secondary/50 active:scale-[0.98]"
+                className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-lg border border-accent bg-accent/15 px-7 py-4 sm:py-3.5 font-mono text-sm text-accent transition-all duration-500 hover:bg-accent hover:text-accent-foreground hover:shadow-lg hover:shadow-accent/25 active:scale-[0.98]"
               >
-                <span>introduction</span>
-                <span className="opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
+                <span className="relative z-10">introduction</span>
+                <span className="relative z-10 opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
                   →
                 </span>
+                <span className="absolute inset-0 -translate-x-full bg-accent transition-transform duration-500 group-hover:translate-x-0" />
               </Link>
             </div>
           </div>
