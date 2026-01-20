@@ -26,15 +26,3 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 *.DS_Store
-
-# Irrelevant files (old template data)
-/docs/
-/lib/blog-data.tsx
-/app/(public)/blog/
-/app/(public)/workbench/
-/app/(public)/notes/
-/components/blog-*.tsx
-/components/workbench*.tsx
-/components/lab-notes.tsx
-/components/notes-*.tsx
-/components/projects-page-content.tsx
