@@ -1,4 +1,7 @@
-import { Github, Twitter, Linkedin, Mail, ExternalLink, Heart } from "lucide-react"
+"use client"
+
+import { useState } from "react"
+import { Github, Twitter, Linkedin, Mail, ExternalLink, Heart, Check } from "lucide-react"
 
 const socialLinks = [
   { label: "GitHub", href: "https://github.com/omdarshan-4964", handle: "@omdarshan-4964", icon: Github },
@@ -7,7 +10,21 @@ const socialLinks = [
   { label: "Email", href: "mailto:omdarshanpatil@gmail.com", handle: "omdarshanpatil@gmail.com", icon: Mail },
 ]
 
+const EMAIL = "omdarshanpatil@gmail.com"
+
 export function Footer() {
+  const [copied, setCopied] = useState(false)
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(EMAIL)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch (err) {
+      // Fallback: open mailto if clipboard fails
+      window.location.href = `mailto:${EMAIL}`
+    }
+  }
   return (
     <footer id="connect" className="border-t border-border/30 px-4 sm:px-6 py-20 sm:py-28 relative overflow-hidden">
       {/* Animated background gradient */}
@@ -30,14 +47,16 @@ export function Footer() {
             </p>
 
             <div className="pt-2">
-              <a
-                href="mailto:omdarshanpatil@gmail.com"
+              <button
+                onClick={handleCopyEmail}
                 className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-xl border border-primary bg-primary/10 px-8 py-4 sm:py-4 font-mono text-sm text-primary transition-all duration-500 hover:text-primary-foreground hover:shadow-lg hover:shadow-primary/25 active:scale-[0.98] w-full sm:w-auto"
               >
-                <span className="relative z-10">send a signal</span>
-                <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">→</span>
+                <span className="relative z-10">{copied ? "email copied!" : "send a signal"}</span>
+                <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">
+                  {copied ? <Check className="h-4 w-4" /> : "→"}
+                </span>
                 <span className="absolute inset-0 -translate-x-full bg-primary transition-transform duration-500 group-hover:translate-x-0" />
-              </a>
+              </button>
             </div>
           </div>
 
@@ -47,15 +66,24 @@ export function Footer() {
               Find me elsewhere
             </p>
             <div className="space-y-2">
-              {socialLinks.map((link, index) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target={link.label !== "Email" ? "_blank" : undefined}
-                  rel={link.label !== "Email" ? "noopener noreferrer" : undefined}
-                  className="group flex items-center justify-between gap-4 rounded-xl border border-transparent p-4 transition-all duration-300 lg:flex-row-reverse active:bg-secondary/30 hover:border-border/50 hover:bg-card/50 hover:shadow-md hover-lift glass animate-fade-in"
-                  style={{ animationDelay: `${index * 100 + 400}ms` }}
-                >
+              {socialLinks.map((link, index) => {
+                const isEmail = link.label === "Email"
+                const Component = isEmail ? "button" : "a"
+                const linkProps = isEmail
+                  ? { onClick: handleCopyEmail }
+                  : {
+                      href: link.href,
+                      target: "_blank",
+                      rel: "noopener noreferrer",
+                    }
+
+                return (
+                  <Component
+                    key={link.label}
+                    {...linkProps}
+                    className="group flex items-center justify-between gap-4 rounded-xl border border-transparent p-4 transition-all duration-300 lg:flex-row-reverse active:bg-secondary/30 hover:border-border/50 hover:bg-card/50 hover:shadow-md hover-lift glass animate-fade-in w-full text-left"
+                    style={{ animationDelay: `${index * 100 + 400}ms` }}
+                  >
                   <div className="flex items-center gap-3 lg:flex-row-reverse">
                     <link.icon className="h-5 w-5 text-muted-foreground transition-all duration-300 group-hover:text-primary group-hover:scale-110 group-hover:rotate-6" />
                     <span className="font-mono text-sm font-medium transition-colors group-hover:text-gradient">
@@ -65,9 +93,12 @@ export function Footer() {
                       <ExternalLink className="h-3 w-3 text-muted-foreground/50 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-1" />
                     )}
                   </div>
-                  <span className="font-mono text-xs text-muted-foreground truncate group-hover:text-foreground transition-colors">{link.handle}</span>
-                </a>
-              ))}
+                  <span className="font-mono text-xs text-muted-foreground truncate group-hover:text-foreground transition-colors">
+                    {isEmail && copied ? "copied!" : link.handle}
+                  </span>
+                  </Component>
+                )
+              })}
             </div>
           </div>
         </div>

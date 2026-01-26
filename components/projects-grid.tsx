@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useState,} from "react"
 import { cn } from "@/lib/utils"
 import { Github, ExternalLink, Sparkles } from "lucide-react"
 
@@ -32,6 +32,18 @@ const projects = [
   },
   {
     id: 2,
+    title: "Evento",
+    description:
+      "Enterprise-grade MERN application managing 500+ events, 2000+ bookings with 95% conflict-free scheduling. Serving 1000+ active users.",
+    tags: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "RBAC"],
+    category: "Full Stack",
+    year: "2025",
+    url: "https://github.com/omdarshan-4964/Evento-College_Events_Management_System",
+    homepage: "https://evento-zeta-nine.vercel.app",
+    featured: true,   
+  },
+  {
+    id: 3,
     title: "SecureAuth Gateway",
     description:
       "Production-ready authentication & authorization infrastructure with JWT, RBAC, and real-time transaction processing. Supports 3-tier role management with 99.9% uptime.",
@@ -43,27 +55,15 @@ const projects = [
     featured: true,
   },
   {
-    id: 3,
-    title: "Cerebra",
+    id: 4,
+    title: "DAiMMP - Decentralized AI Model Marketplace",
     description:
-      "AI-powered learning roadmap generator creating personalized, interactive node-based learning maps using Google Gemini. Built with Next.js 14 and React Flow.",
-    tags: ["Next.js 14", "React 18", "TypeScript", "Google Gemini AI", "React Flow", "Tailwind CSS", "Vercel"],
+      "Blockchain-powered AI marketplace processing 1000+ secure transactions. Ethereum-integrated platform with smart contract validation.",
+    tags: ["React.js", "Node.js", "Ethereum", "Blockchain", "AI/ML APIs", "Smart Contracts"],
     category: "Machine Learning",
     year: "2025",
-    url: "https://github.com/omdarshan-4964/Cerebra",
-    homepage: "https://cerebra-ten.vercel.app/",
-    featured: true,
-  },
-  {
-    id: 4,
-    title: "Evento",
-    description:
-      "Enterprise-grade MERN application managing 500+ events, 2000+ bookings with 95% conflict-free scheduling. Serving 1000+ active users.",
-    tags: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "RBAC"],
-    category: "Full Stack",
-    year: "2025",
-    url: "https://github.com/omdarshan-4964/Evento-College_Events_Management_System",
-    homepage: "https://evento-zeta-nine.vercel.app",
+    url: "https://github.com/omdarshan-4964/DAiMMP",
+    homepage: "https://aimodels-frontend.onrender.com/",
     featured: true,
   },
 ]
@@ -109,7 +109,7 @@ export function ProjectsGrid() {
               className={cn(
                 "group relative overflow-hidden rounded-xl border bg-card/40 p-6 sm:p-7 glass transition-all duration-400 active:scale-[0.99] hover-lift hover:border-primary/40 hover:bg-card/70 animate-fade-in-up",
                 "highlight" in project && project.highlight
-                  ? "sm:col-span-2 lg:col-span-2 border-primary/30 bg-gradient-to-br from-primary/8 via-card/50 to-primary/8"
+                  ? "sm:col-span-2 lg:col-span-2 border-primary/30 bg-linear-to-br from-primary/8 via-card/50 to-primary/8"
                   : "border-border/60",
                 project.featured && !("highlight" in project && project.highlight) && "sm:col-span-2 lg:col-span-1",
               )}
@@ -199,7 +199,7 @@ export function ProjectsGrid() {
                 )}
               </div>
 
-              <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-primary via-primary/80 to-transparent transition-all duration-500 group-hover:w-full" />
+              <div className="absolute bottom-0 left-0 h-1 w-0 bg-linear-to-r from-primary via-primary/80 to-transparent transition-all duration-500 group-hover:w-full" />
             </article>
           ))}
         </div>

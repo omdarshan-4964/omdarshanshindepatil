@@ -1,6 +1,22 @@
-import { Code2, Rocket, Target, Zap, Bot, Award, Users, GitBranch } from "lucide-react";
+"use client"
+
+import { useState } from "react"
+import { Code2, Rocket, Target, Zap, Bot, Award, Users, GitBranch, Check } from "lucide-react";
+
+const EMAIL = "omdarshanpatil@gmail.com"
 
 export default function IntroductionPage() {
+  const [copied, setCopied] = useState(false)
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(EMAIL)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch {
+      window.location.href = `mailto:${EMAIL}`
+    }
+  }
   return (
     <div>
       {/* Hero Section */}
@@ -13,7 +29,7 @@ export default function IntroductionPage() {
               </p>
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl text-balance">
                 Building Systems That{" "}
-                <span className="bg-gradient-to-l from-primary/50 to-accent text-transparent bg-clip-text">
+                <span className="bg-linear-to-l from-primary/50 to-accent text-transparent bg-clip-text">
                   Scale
                 </span>
               </h1>
@@ -181,7 +197,7 @@ export default function IntroductionPage() {
       {/* What I'm Looking For */}
       <section className="relative px-4 sm:px-6 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl">
-          <div className="rounded border border-primary/30 bg-gradient-to-br from-primary/5 to-accent/5 p-6 sm:p-10 backdrop-blur-sm">
+          <div className="rounded border border-primary/30 bg-linear-to-br from-primary/5 to-accent/5 p-6 sm:p-10 backdrop-blur-sm">
             <div className="space-y-6">
               <div>
                 <p className="font-mono text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] text-primary mb-3">
@@ -219,13 +235,13 @@ export default function IntroductionPage() {
               </div>
 
               <div className="pt-4">
-                <a
-                  href="mailto:omdarshanpatil@gmail.com"
+                <button
+                  onClick={handleCopyEmail}
                   className="inline-flex items-center gap-3 rounded-lg border border-primary bg-primary px-6 py-3 font-mono text-sm text-primary-foreground transition-all duration-300 hover:bg-primary/90 active:scale-[0.98]"
                 >
-                  <span>Let&apos;s Talk</span>
-                  <span>→</span>
-                </a>
+                  <span>{copied ? "email copied!" : "Let's Talk"}</span>
+                  <span>{copied ? <Check className="h-4 w-4" /> : "→"}</span>
+                </button>
               </div>
             </div>
           </div>
