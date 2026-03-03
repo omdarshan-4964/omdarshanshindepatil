@@ -20,14 +20,14 @@ const projects = [
   },
   {
     id: 1,
-    title: "CodeStream",
+    title: "SyncForge",
     description:
       "Production-ready collaborative coding platform with <50ms latency, supporting 50+ concurrent users per room. Built with Next.js and WebSockets.",
     tags: ["Next.js", "TypeScript", "Node.js", "WebSockets", "PostgreSQL", "Prisma", "Docker"],
     category: "TypeScript-Next.js",
     year: "2025",
-    url: "https://github.com/omdarshan-4964/CodeStream",
-    homepage: "https://code-stream-rho.vercel.app",
+    url: "https://github.com/omdarshan-4964/SyncForge",
+    homepage: "https://omdarshancodeeditor.vercel.app/",
     featured: true,
   },
   {
