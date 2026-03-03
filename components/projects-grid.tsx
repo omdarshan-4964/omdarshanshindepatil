@@ -32,6 +32,17 @@ const projects = [
   },
   {
     id: 2,
+    title: "Discord Copilot",
+    description: "AI-powered Discord agent with a web admin interface. Enables admin-controlled system instructions and real-time AI interaction in Discord channels. Built with Next.js, Discord.js, Supabase, and Gemini AI.",
+    tags: ["Next.js", "React.js", "Discord.js", "Supabase", "TypeScript", "Gemini AI"],
+    category: "Full Stack",
+    year: "2026",
+    url: "https://github.com/omdarshan-4964/discord-copilot",
+    homepage: "https://discordcopilot.vercel.app/",
+    featured: true,
+  },
+  {
+    id: 3,
     title: "Evento",
     description:
       "Enterprise-grade MERN application managing 500+ events, 2000+ bookings with 95% conflict-free scheduling. Serving 1000+ active users.",
@@ -40,10 +51,10 @@ const projects = [
     year: "2025",
     url: "https://github.com/omdarshan-4964/Evento-College_Events_Management_System",
     homepage: "https://evento-zeta-nine.vercel.app",
-    featured: true,   
+    featured: true,
   },
   {
-    id: 3,
+    id: 4,
     title: "SecureAuth Gateway",
     description:
       "Production-ready authentication & authorization infrastructure with JWT, RBAC, and real-time transaction processing. Supports 3-tier role management with 99.9% uptime.",
@@ -55,7 +66,7 @@ const projects = [
     featured: true,
   },
   {
-    id: 4,
+    id: 5,
     title: "DAiMMP - Decentralized AI Model Marketplace",
     description:
       "Blockchain-powered AI marketplace processing 1000+ secure transactions. Ethereum-integrated platform with smart contract validation.",
@@ -157,7 +168,7 @@ export function ProjectsGrid() {
               <p
                 className={cn(
                   "mb-5 text-sm leading-relaxed text-muted-foreground",
-                  "highlight" in project && project.highlight ? "line-clamp-3" : "line-clamp-2",
+                  "highlight" in project && project.highlight ? "line-clamp-4" : "line-clamp-4",
                 )}
               >
                 {project.description}
