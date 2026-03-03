@@ -83,7 +83,7 @@ export default function IntroductionPage() {
               </p>
 
               <p>
-                Currently in my final year at <span className="text-foreground font-medium">KIT&apos;s College of Engineering</span> (7.69 CGPA), 
+                Currently in my final year at <span className="text-foreground font-medium">KIT&apos;s College of Engineering</span> (TY GPA: 8.11 / Aggregate: 7.69), 
                 I&apos;ve complemented my academics with industry-recognized certifications from Google, 100xDevs, and Palo Alto Networks. 
                 But what truly defines me isn&apos;t my resume—it&apos;s the <span className="text-foreground font-medium">6+ production applications</span> maintaining 
                 99.9% uptime that speak for themselves.
@@ -106,6 +106,10 @@ export default function IntroductionPage() {
               <div className="rounded-lg border border-border/60 bg-secondary/50 px-4 py-3">
                 <p className="font-mono text-2xl font-bold text-primary">&lt;50ms</p>
                 <p className="text-xs text-muted-foreground">Latency</p>
+              </div>
+              <div className="rounded-lg border border-border/60 bg-secondary/50 px-4 py-3">
+                <p className="font-mono text-2xl font-bold text-primary">98%</p>
+                <p className="text-xs text-muted-foreground">LLM Cost Cut</p>
               </div>
             </div>
           </div>
@@ -215,7 +219,7 @@ export default function IntroductionPage() {
                 </p>
                 
                 <p className="text-foreground font-medium">
-                  Ideal roles: Full Stack Engineer • AI/ML Engineer • Backend Engineer • System Architect
+                  Ideal roles: Full Stack Engineer • AI/ML Engineer • SDE Intern • Gen AI Engineer
                 </p>
                 
                 <div className="pt-4 space-y-2 font-mono text-sm">
@@ -225,7 +229,7 @@ export default function IntroductionPage() {
                   </p>
                   <p className="flex items-center gap-2">
                     <span className="text-primary">→</span>
-                    <span>Available to start immediately</span>
+                    <span>Available to join in 15 days</span>
                   </p>
                   <p className="flex items-center gap-2">
                     <span className="text-primary">→</span>
