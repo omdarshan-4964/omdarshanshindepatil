@@ -1,6 +1,7 @@
 import { Header } from "@/components/header"
 import { HeroSection } from "@/components/hero-section"
 import { ProjectsGrid } from "@/components/projects-grid"
+import { Experience } from "@/components/experience"
 import { LabNotes } from "@/components/lab-notes"
 import { Certifications } from "@/components/certifications"
 import { Education } from "@/components/education"
@@ -29,6 +30,7 @@ export default function Home() {
           <Header />
           <HeroSection />
           <ProjectsGrid />
+          <Experience />
           <LabNotes />
           <Certifications />
           <Education />
